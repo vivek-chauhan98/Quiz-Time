@@ -1,0 +1,328 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'poppins', serif;
+    background-color: rgba(204, 226, 194, 1);
+}
+
+main.less-time{
+    background-color: rgba(212, 214, 159, 0.9);
+}
+
+main.less-time2{
+    background-color: rgba(219, 173, 173, 1);
+}
+
+.container-1{
+    background-color: rgba(245, 245, 245, 0.48);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.logo{
+    height: 360px;
+    width: 860px;
+}
+
+.start-quiz-btn{
+    height: 115px;
+    width: 450px;
+    font-size: 53px;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgba(53, 189, 58, 1);
+    cursor: pointer;
+    border: none;
+    box-shadow: 6px 6px 0px 5px rgba(1, 171, 8, 1);
+    border-radius: 10px;   
+}
+
+.start-quiz-btn:active{
+    background-color: rgb(120, 190, 122);
+}
+
+
+.made-by{
+    font-size: 12px;
+    color: rgba(133, 133, 133, 1);
+    margin-top: 130px;
+    text-align: center;
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+.container-2{
+    background-color: rgb(204, 226, 194);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 46%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.small-logos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-small{
+    margin-top: 5px;
+    height: 60px;
+    width: 170px;
+}
+
+.volume-icon{    
+    margin-top: 30px;
+    height: 15px;
+    width: 30px;
+}
+
+.completed-ques{
+    margin-top: 10px;
+    padding: 5px 10px;
+    max-width: fit-content;
+    background-color: rgba(254, 195, 61, 1);
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.question-bar{
+    padding: 0 10px;
+    margin: 0 auto;
+    height: 100px;
+    width: 690px;
+    background-color: rgba(245, 245, 245, 0.7);
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 0px 0px 0px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.question-bar h1{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.time-completed{
+    text-align: center;
+    margin-top: 16px; 
+    min-width: 70px;
+    min-height: 30px;
+    padding: 1px 10px;
+    background-color: rgba(2, 164, 9, 0.8);
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    width: max-content;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 1px #02a4096e;
+    margin-left: 89%;
+}
+
+.time-completed.less-time{
+    background-color: rgba(197, 177, 0, 0.9);
+    box-shadow: 2px 2px 4px 1px rgba(197, 177, 0, 0.43);
+}
+
+.time-completed.less-time2{
+    background-color: rgba(197, 12, 0, 0.9);
+    box-shadow: 2px 2px 4px 1px rgba(197, 12, 0, 0.43);
+}
+
+.options-tab{
+    margin: 0 auto;
+    height: 310px;
+    width: 700px;
+    background-color: rgba(255, 255, 255,0.7);
+    border-radius: 10px;
+    box-shadow: 5px 0px 0px 0px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opt {
+    width: 95%;
+    padding: 7px 0;
+    border: 2px solid #d9d9d9e6;
+    border-radius: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.opt:hover{
+    background-color: rgba(0,0,0,0.3);
+}
+
+.one, .two, .three, .four{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.next-page{
+    color: rgb(1, 171, 8);
+    font-size: 20px;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-left: 90%;
+}
+
+.next-page.less-time{
+    color: rgba(197, 136, 0, 1);
+}
+.next-page.less-time2{
+    color: rgba(197, 0, 0, 1);
+}
+
+.made-by-2{
+    font-size: 10px;
+    color: rgba(133, 133, 133, 1);
+    margin-top: 12px;
+    text-align: center;
+}
+
+.less-time {
+    background-color: rgba(212, 214, 159, 0.55);
+}
+
+.less-time2 {
+    background-color: rgba(219, 173, 173, 1);
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+.container-3{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(246, 244, 240, 1);
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.last-logo{
+    margin-top: 60px;
+    height: 90px;
+    width: 210px;
+}
+
+.res{
+    font-size: 24px;
+}
+
+.result-bar{
+    height: 70px;
+    width: 600px;
+    background-color: rgba(255, 122, 122, 1);
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.correct-bar{
+    position: absolute;
+    height: 70px;
+    background-color: rgba(53, 189, 58, 1);
+    border-radius: 10px;
+    width: 24px;
+}
+
+.incorrect-ans{
+    margin-top: 30px;
+    margin-left: 580px;
+    height: 60px;
+    width: 60px;
+    border: 5px solid rgba(235, 69, 69, 1);
+    border-left: none;
+    border-bottom: none;
+}
+
+.percent-corr{
+    color: rgba(0, 0, 0, 1);
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 60px;
+    margin-left: -15px;
+}
+
+.percent-incorr{
+    color: rgba(0, 0, 0, 1);
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 60px;
+    margin-left: 40px;
+}
+
+.correct-ans{
+    margin-top: 30px;
+    margin-left: -40px;
+    height: 60px;
+    width: 60px;
+    border: 5px solid rgba(0, 144, 6, 1);
+    border-right: none;
+    border-bottom: none;
+}
+
+.show-res, .compliment{
+    margin: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.retry{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 0;
+    padding-left: 15px;
+    padding-right: 25px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(53, 189, 58, 1);
+    cursor: pointer;
+    border: none;
+    box-shadow: 3px 3px 0px 2px rgba(1, 171, 8, 1);
+    border-radius: 5px;   
+}
+
+.retry:active{
+    background-color: rgb(120, 190, 122);
+}
+
+.share-q{
+    margin-top: 120px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(83, 83, 83, 1);
+}
+
+.share{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    justify-content: space-evenly;
+    width: 150px;
+    
+}
+
+.share img{
+    cursor: pointer;
+    height: 25px;
+}

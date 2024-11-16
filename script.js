@@ -77,10 +77,11 @@ let l = 0
 let m = 0
 
 startQuizBtn.addEventListener('click', startTheQuiz)
-retryBtn.addEventListener('click', startTheQuiz)
 
 
   function startTheQuiz() {
+
+  questionsCompleted.innerText = `${currentQuestion}/25`
     
   containerOne.style.display = 'none'
   containerTwo.style.display = 'flex' 
@@ -95,7 +96,7 @@ retryBtn.addEventListener('click', startTheQuiz)
   nextPage.style.pointerEvents = 'none'
 
 
-  optOne.addEventListener('click', function startTheQuiz() {
+  optOne.addEventListener('click', () => {
       const result = allCorrectAnswers.filter((el) => {
         return el == allCorrectAnswers[m]
       })
@@ -122,7 +123,6 @@ retryBtn.addEventListener('click', startTheQuiz)
         optOne.style.borderColor = 'green'
         correctAnswersSelected++
       }
-      m++
     
       nextPage.style.pointerEvents = 'auto'
       optOne.style.pointerEvents = 'none'
@@ -137,7 +137,7 @@ retryBtn.addEventListener('click', startTheQuiz)
     const result = allCorrectAnswers.filter((el) => {
       return el == allCorrectAnswers[m]
     })
-
+    
     if(result != optTwo.textContent) {
       optTwo.style.borderColor = 'red'
 
@@ -157,10 +157,9 @@ retryBtn.addEventListener('click', startTheQuiz)
     }
 
     else{
-      optTwo.style.borderColor = 'green'
+      optTwo.style.borderColor = 'green'      
       correctAnswersSelected++ 
     }
-    m++
 
     nextPage.style.pointerEvents = 'auto'
     optOne.style.pointerEvents = 'none'
@@ -174,7 +173,7 @@ retryBtn.addEventListener('click', startTheQuiz)
     const result = allCorrectAnswers.filter((el) => {
       return el == allCorrectAnswers[m]
     })
-
+    
     if(result != optThree.textContent) {
       optThree.style.borderColor = 'red'
 
@@ -194,10 +193,9 @@ retryBtn.addEventListener('click', startTheQuiz)
     }
 
     else{
-      optThree.style.borderColor = 'green'
+      optThree.style.borderColor = 'green'      
       correctAnswersSelected++     
     }
-    m++
   
     nextPage.style.pointerEvents = 'auto'
     optOne.style.pointerEvents = 'none'
@@ -210,7 +208,7 @@ retryBtn.addEventListener('click', startTheQuiz)
     const result = allCorrectAnswers.filter((el) => {
       return el == allCorrectAnswers[m]
     })
-  
+    
     if(result != optFour.textContent) {
       optFour.style.borderColor = 'red'
 
@@ -230,10 +228,9 @@ retryBtn.addEventListener('click', startTheQuiz)
     }
 
     else{
-      optFour.style.borderColor = 'green'
-      correctAnswersSelected++ 
+      optFour.style.borderColor = 'green'      
+      correctAnswersSelected++       
     }
-    m++
 
     nextPage.style.pointerEvents = 'auto'
     optOne.style.pointerEvents = 'none'
@@ -241,7 +238,8 @@ retryBtn.addEventListener('click', startTheQuiz)
     optThree.style.pointerEvents = 'none'
     optFour.style.pointerEvents = 'none'
   })
-  }
+
+}
 
 
 
@@ -253,9 +251,8 @@ function startTimer() {
 function countdown() {
 
 if (timeLeft == 0) {
-  timeTab.innerHTML = `Time up &#128577`
+  timeTab.innerHTML = `Time up`
   clearInterval(timerId)
-  m++
   optOne.style.pointerEvents = 'none'
   optTwo.style.pointerEvents = 'none'
   optThree.style.pointerEvents = 'none'
@@ -281,15 +278,17 @@ if(nextPage.style.pointerEvents == 'auto') {
   clearInterval(timerId)
 }
 
+if(currentQuestion > 25) {
+  clearInterval(timerId)
+  m = 0
+}
+
 
 if(timeLeft) {
   timeTab.innerHTML = `00:${timeLeft}`;
   timeLeft--;
 }
-}
-}
-
-
+}}
 
 
 
@@ -325,7 +324,7 @@ nextPage.addEventListener('click', () => {
     containerTwo.style.display = 'none'
     containerThree.style.display = 'flex'
     showResult.textContent = `${correctAnswersSelected}/25`
-    correctBar.style.width = `${Number(correctAnswersSelected/25) * 600}px`
+    correctBar.style.width = `${Number(correctAnswersSelected/25) * resultBar.offsetWidth}px`
     correctPercent.textContent = `${Math.floor(Number(correctAnswersSelected/25) * 100)}%`
     incorrectPercent.textContent = `${Math.floor(100 - (Number(correctAnswersSelected/25) * 100))}%`
   }
@@ -350,8 +349,11 @@ nextPage.addEventListener('click', () => {
 
   i++
   j = j + 4 
+  m++
 })
 
 retryBtn.addEventListener('click', () => {
+  currentQuestion = 1, correctAnswersSelected = 0, i = 1, j = 4, m = 0
+  location.reload()
   startTheQuiz()
 })
